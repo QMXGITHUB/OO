@@ -1,0 +1,16 @@
+C:\OO\OO\bin\xunit.abstractions.dll
+C:\OO\OO\bin\xunit.execution.desktop.dll
+C:\OO\OO\bin\xunit.runner.visualstudio.testadapter.dll
+C:\OO\OO\bin\xunit.runner.utility.desktop.dll
+C:\OO\OO\bin\OO.dll.config
+C:\OO\OO\bin\OO.dll
+C:\OO\OO\bin\OO.pdb
+C:\OO\OO\bin\xunit.assert.dll
+C:\OO\OO\bin\xunit.core.dll
+C:\OO\OO\bin\xunit.assert.pdb
+C:\OO\OO\bin\xunit.assert.xml
+C:\OO\OO\bin\xunit.core.pdb
+C:\OO\OO\bin\xunit.core.xml
+C:\OO\OO\obj\Debug\OO.csprojResolveAssemblyReference.cache
+C:\OO\OO\obj\Debug\OO.dll
+C:\OO\OO\obj\Debug\OO.pdb
