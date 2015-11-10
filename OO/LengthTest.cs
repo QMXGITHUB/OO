@@ -7,27 +7,24 @@ using Xunit;
 
 namespace OO
 {
-    public class test_1
+    public class LenghtTest
     {
-        private string same_length = "same length";
-        private String different_length = "different_length";
-
         [Fact]
         public void Given_2_same_lengths_return_same_length()
         {
-            double length1 = 1;
-            double length2 = 1;
-            string actual_result = Compare_Two_Lengths(length1, length2,"m","m");
-            Assert.Equal("same length",actual_result);
+            Length length1 = new Length(1);
+            Length length2 = new Length(1);
+            bool actual_result = length1.Equal(length2);
+            Assert.True(actual_result);
         }
 
         [Fact]
         public void Given_2_different_lengths_return_different_length()
         {
-            double length1 = 1;
-            double length2 = 2;
-            string actual_result = Compare_Two_Lengths(length1, length2,"m","m");
-            Assert.Equal("different length", actual_result);
+            Length length1 = new Length(1);
+            Length length2 = new Length(2);
+            bool actual_result = length1.Equal(length2);
+            Assert.False(actual_result);
         }
 
         [Fact]
@@ -40,6 +37,11 @@ namespace OO
             string actual_result = Compare_Two_Lengths(length1, length2,unit1,unit2);
             Assert.Equal("same length",actual_result);
         }
+
+        private string Compare_Two_Lengths(double length1, double length2, string unit1, string unit2)
+        {
+            throw new NotImplementedException();
+        }
         [Fact]
         public void Given_2_different_lengths_with_same_unit_mm_return_same_length()
         {
@@ -51,14 +53,6 @@ namespace OO
             Assert.Equal("different length", actual_result);
         }
 
-        private string Compare_Two_Lengths(double length1, double length2,string unit1,string unit2)
-        {
-            if(length1==length2)
-                 return "same length";
-            else
-            {
-                return "different length";
-            }
-        }
+
     }
 }
