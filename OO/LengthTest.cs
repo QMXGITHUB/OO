@@ -10,47 +10,39 @@ namespace OO
     public class LenghtTest
     {
         [Fact]
-        public void Given_2_same_lengths_return_same_length()
+        public void Varify_two_same_lengths_with_default_unit_m()
         {
             Length length1 = new Length(1);
             Length length2 = new Length(1);
-            bool actual_result = length1.Equal(length2);
-            Assert.True(actual_result);
+            bool isTrue = length1.Equal(length2);
+            Assert.True(isTrue);
         }
 
         [Fact]
-        public void Given_2_different_lengths_return_different_length()
+        public void Varify_two_different_lengths_with_default_unit_m()
         {
             Length length1 = new Length(1);
             Length length2 = new Length(2);
-            bool actual_result = length1.Equal(length2);
-            Assert.False(actual_result);
+            bool idFalse = length1.Equal(length2);
+            Assert.False(idFalse);
         }
 
         [Fact]
-        public void Given_2_same_lengths_with_same_unit_m_return_same_length()
+        public void Varify_two_same_lengths_with_same_unit_cm()
         {
-            double length1 = 1;
-            string unit1 = "m";
-            double length2 = 1;
-            string unit2 = "m";
-            string actual_result = Compare_Two_Lengths(length1, length2,unit1,unit2);
-            Assert.Equal("same length",actual_result);
+            Length length1 = new Length(1, LengthUnit.cm);
+            Length length2 = new Length(1, LengthUnit.cm);
+            bool isTrue = length1.Equal(length2);
+            Assert.True(isTrue);
         }
 
-        private string Compare_Two_Lengths(double length1, double length2, string unit1, string unit2)
-        {
-            throw new NotImplementedException();
-        }
         [Fact]
-        public void Given_2_different_lengths_with_same_unit_mm_return_same_length()
+        public void Verify_two_different_lengths_with_same_unit_mm()
         {
-            double length1 = 1;
-            string unit1 = "mm";
-            double length2 = 2;
-            string unit2 = "mm";
-            string actual_result = Compare_Two_Lengths(length1, length2, unit1, unit2);
-            Assert.Equal("different length", actual_result);
+            Length length1 = new Length(1, LengthUnit.mm);
+            Length length2 = new Length(2, LengthUnit.mm);
+            bool isFalse = length1.Equal(length2);
+            Assert.False(isFalse);
         }
 
 
