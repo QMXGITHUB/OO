@@ -8,7 +8,7 @@ namespace OO
     public class Length
     {
         private double len;
-        private LengthUnit lengthUnit = LengthUnit.m;
+        private LengthUnit lenUnit = LengthUnit.m;
         public Length(double length) 
         {
             this.len = length;
@@ -17,7 +17,7 @@ namespace OO
         public Length(double length, LengthUnit lengthUnit)
         {
             this.len = length;
-            this.lengthUnit = lengthUnit;
+            this.lenUnit = lengthUnit;
         }
 
         public double GetLength() 
@@ -27,35 +27,48 @@ namespace OO
 
         public LengthUnit GetUnit()
         {
-            return this.lengthUnit;
+            return this.lenUnit;
         }
 
         public bool Equal(Length length)
         {
             if (len == length.GetLength())
             {
-                if (lengthUnit == length.GetUnit())
+                if (lenUnit == length.GetUnit())
                 {
                     return true;
                 }
                 else
                 {
-                    //throw new Exception("We will add function for same length with diferent unit! Sorry!");
                     return false;
                 }
             }
             else
 	        {
-                if (lengthUnit == length.lengthUnit)
+                if (lenUnit == length.lenUnit)
                 {
                     return false;
                 }
                 else
                 {
-
+                    if (len == length.UnifyLengthUnit(lenUnit))
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
-                return false;
 	        }
+        }
+
+        public double UnifyLengthUnit(LengthUnit lengthUnit)
+        {
+            if ()
+            {
+                
+            }
         }
 
 
