@@ -45,6 +45,58 @@ namespace OO
             Assert.False(isFalse);
         }
 
+        [Fact]
+        public void Verify_two_same_data_with_diff_unit_m_cm()
+        {
+            Length length1 = new Length(101, LengthUnit.m);
+            Length length2 = new Length(101, LengthUnit.cm);
+            bool isFalse = length1.Equal(length2);
+            Assert.False(isFalse);
+        }
 
+        [Fact]
+        public void Verify_two_diff_data_with_same_unit_m()
+        {
+            Length length1 = new Length(1.01, LengthUnit.m);
+            Length length2 = new Length(101, LengthUnit.m);
+            bool isFalse = length1.Equal(length2);
+            Assert.False(isFalse);
+        }
+
+        [Fact]
+        public void Verify_two_data_diff_100_times_with_unit_m_cm()
+        {
+            Length length1 = new Length(1.01, LengthUnit.m);
+            Length length2 = new Length(101, LengthUnit.cm);
+            bool isTrue = length1.Equal(length2);
+            Assert.True(isTrue);
+        }
+
+        [Fact]
+        public void Verify_two_data_diff_1000_times_with_unit_m_mm()
+        {
+            Length length1 = new Length(1.001, LengthUnit.m);
+            Length length2 = new Length(1001, LengthUnit.mm);
+            bool isTrue = length1.Equal(length2);
+            Assert.True(isTrue);
+        }
+
+        [Fact]
+        public void Verify_two_data_diff_10_times_with_unit_cm_mm()
+        {
+            Length length1 = new Length(1.01, LengthUnit.cm);
+            Length length2 = new Length(10.1, LengthUnit.mm);
+            bool isTrue = length1.Equal(length2);
+            Assert.True(isTrue);
+        }
+
+        [Fact]
+        public void Verify_two_data_diff_2_times_with_unit_m_cm()
+        {
+            Length length1 = new Length(101, LengthUnit.m);
+            Length length2 = new Length(202, LengthUnit.cm);
+            bool isFalse = length1.Equal(length2);
+            Assert.True(isFalse);
+        }
     }
 }

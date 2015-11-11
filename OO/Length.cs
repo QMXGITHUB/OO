@@ -40,11 +40,20 @@ namespace OO
                 }
                 else
                 {
-                    throw new Exception("We will add function for same length with diferent unit! Sorry!");
+                    //throw new Exception("We will add function for same length with diferent unit! Sorry!");
+                    return false;
                 }
             }
             else
 	        {
+                if (lengthUnit == length.lengthUnit)
+                {
+                    return false;
+                }
+                else
+                {
+
+                }
                 return false;
 	        }
         }
