@@ -96,7 +96,8 @@ namespace OO
             Length length1 = new Length(101, LengthUnit.m);
             Length length2 = new Length(202, LengthUnit.cm);
             bool isFalse = length1.Equal(length2);
-            Assert.True(isFalse);
+            Assert.False(isFalse);
         }
+        
     }
 }

@@ -32,53 +32,31 @@ namespace OO
 
         public bool Equal(Length length)
         {
-            if (len == length.GetLength())
+            if (EqualForDouble(len,length.UnifyLengthUnit(lenUnit)))
             {
-                if (lenUnit == length.GetUnit())
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                return true;
             }
             else
-	        {
-                if (lenUnit == length.lenUnit)
-                {
-                    return false;
-                }
-                else
-                {
-                    if (len == length.UnifyLengthUnit(lenUnit))
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
-                    }
-                }
-	        }
+            {
+                return false;
+            }
+        }
+
+        private bool EqualForDouble(double data1, double data2)
+        {
+            return Math.Abs(data1 - data2) < 0.0000001;
         }
 
         public double UnifyLengthUnit(LengthUnit lengthUnit)
         {
-            if ()
+            if (lenUnit == lengthUnit)
             {
-                
+                return this.len;
+            }
+            else
+            {
+                return this.len *  LengthUnitExchange.CalculateMutiples(lenUnit, lengthUnit);
             }
         }
-
-
-
-    }
-
-    public enum LengthUnit
-    {
-        m,
-        cm,
-        mm
     }
 }
