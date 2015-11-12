@@ -46,7 +46,7 @@ namespace OO
         }
 
         [Fact]
-        public void Verify_two_same_data_with_diff_unit_m_cm()
+        public void Verify_two_same_lengths_with_diff_unit_m_cm()
         {
             Length length1 = new Length(101, LengthUnit.m);
             Length length2 = new Length(101, LengthUnit.cm);
@@ -55,7 +55,7 @@ namespace OO
         }
 
         [Fact]
-        public void Verify_two_diff_data_with_same_unit_m()
+        public void Verify_two_different_lengths_with_same_unit_m()
         {
             Length length1 = new Length(1.01, LengthUnit.m);
             Length length2 = new Length(101, LengthUnit.m);
@@ -64,7 +64,7 @@ namespace OO
         }
 
         [Fact]
-        public void Verify_two_data_diff_100_times_with_unit_m_cm()
+        public void Verify_two_lengths_diff_100_times_with_unit_m_cm()
         {
             Length length1 = new Length(1.01, LengthUnit.m);
             Length length2 = new Length(101, LengthUnit.cm);
@@ -73,7 +73,7 @@ namespace OO
         }
 
         [Fact]
-        public void Verify_two_data_diff_1000_times_with_unit_m_mm()
+        public void Verify_two_lengths_diff_1000_times_with_unit_m_mm()
         {
             Length length1 = new Length(1.001, LengthUnit.m);
             Length length2 = new Length(1001, LengthUnit.mm);
@@ -82,7 +82,7 @@ namespace OO
         }
 
         [Fact]
-        public void Verify_two_data_diff_10_times_with_unit_cm_mm()
+        public void Verify_two_length_diff_10_times_with_unit_cm_mm()
         {
             Length length1 = new Length(1.01, LengthUnit.cm);
             Length length2 = new Length(10.1, LengthUnit.mm);
@@ -91,7 +91,7 @@ namespace OO
         }
 
         [Fact]
-        public void Verify_two_data_diff_2_times_with_unit_m_cm()
+        public void Verify_two_length_diff_2_times_with_unit_m_cm()
         {
             Length length1 = new Length(101, LengthUnit.m);
             Length length2 = new Length(202, LengthUnit.cm);
