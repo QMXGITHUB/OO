@@ -7,97 +7,69 @@ using Xunit;
 
 namespace OO
 {
-    public class LenghtTest
+    public class LengthTest
     {
         [Fact]
-        public void Varify_two_same_lengths_with_default_unit_m()
+        public void verify_two_length_2_and_3_with_default_m()
         {
-            Length length1 = new Length(1);
-            Length length2 = new Length(1);
-            bool isTrue = length1.Equal(length2);
-            Assert.True(isTrue);
+            var lenghtShort = new Length(2);
+            var lenghtLong = new Length(3);
+
+            Assert.False(lenghtShort.Equals(lenghtLong));
         }
 
         [Fact]
-        public void Varify_two_different_lengths_with_default_unit_m()
+        public void verify_two_lengh_2_01_and_2_01_with_default_unit_m()
         {
-            Length length1 = new Length(1);
-            Length length2 = new Length(2);
-            bool idFalse = length1.Equal(length2);
-            Assert.False(idFalse);
+            var lenghtShort = new Length(2.01);
+            var lenghtLong = new Length(2.01);
+
+            Assert.True(lenghtShort.Equals(lenghtLong));
         }
 
         [Fact]
-        public void Varify_two_same_lengths_with_same_unit_cm()
+        public void verify_two_lengh_2_01_and_2_01_with_unit_cm()
         {
-            Length length1 = new Length(1, LengthUnit.cm);
-            Length length2 = new Length(1, LengthUnit.cm);
-            bool isTrue = length1.Equal(length2);
-            Assert.True(isTrue);
+            var lenghtShort = new Length(2.01, LenghtUnit.cm);
+            var lenghtLong = new Length(2.01, LenghtUnit.cm);
+
+            Assert.True(lenghtShort.Equals(lenghtLong));
         }
 
         [Fact]
-        public void Verify_two_different_lengths_with_same_unit_mm()
+        public void verify_two_lengh_2_01_and_2_01_with_unit_mm()
         {
-            Length length1 = new Length(1, LengthUnit.mm);
-            Length length2 = new Length(2, LengthUnit.mm);
-            bool isFalse = length1.Equal(length2);
-            Assert.False(isFalse);
-        }
+            var lenghtShort = new Length(2.01, LenghtUnit.mm);
+            var lenghtLong = new Length(2.01, LenghtUnit.mm);
 
-        [Fact]
-        public void Verify_two_same_lengths_with_diff_unit_m_cm()
-        {
-            Length length1 = new Length(101, LengthUnit.m);
-            Length length2 = new Length(101, LengthUnit.cm);
-            bool isFalse = length1.Equal(length2);
-            Assert.False(isFalse);
-        }
-
-        [Fact]
-        public void Verify_two_different_lengths_with_same_unit_m()
-        {
-            Length length1 = new Length(1.01, LengthUnit.m);
-            Length length2 = new Length(101, LengthUnit.m);
-            bool isFalse = length1.Equal(length2);
-            Assert.False(isFalse);
-        }
-
-        [Fact]
-        public void Verify_two_lengths_diff_100_times_with_unit_m_cm()
-        {
-            Length length1 = new Length(1.01, LengthUnit.m);
-            Length length2 = new Length(101, LengthUnit.cm);
-            bool isTrue = length1.Equal(length2);
-            Assert.True(isTrue);
-        }
-
-        [Fact]
-        public void Verify_two_lengths_diff_1000_times_with_unit_m_mm()
-        {
-            Length length1 = new Length(1.001, LengthUnit.m);
-            Length length2 = new Length(1001, LengthUnit.mm);
-            bool isTrue = length1.Equal(length2);
-            Assert.True(isTrue);
-        }
-
-        [Fact]
-        public void Verify_two_length_diff_10_times_with_unit_cm_mm()
-        {
-            Length length1 = new Length(1.01, LengthUnit.cm);
-            Length length2 = new Length(10.1, LengthUnit.mm);
-            bool isTrue = length1.Equal(length2);
-            Assert.True(isTrue);
-        }
-
-        [Fact]
-        public void Verify_two_length_diff_2_times_with_unit_m_cm()
-        {
-            Length length1 = new Length(101, LengthUnit.m);
-            Length length2 = new Length(202, LengthUnit.cm);
-            bool isFalse = length1.Equal(length2);
-            Assert.False(isFalse);
+            Assert.True(lenghtShort.Equals(lenghtLong));
         }
         
+        [Fact]
+        public void verify_two_lengh_2_01_m_and_201_cm()
+        {
+            var lenghtShort = new Length(2.01, LenghtUnit.m);
+            var lenghtLong = new Length(201, LenghtUnit.cm);
+
+            Assert.True(lenghtShort.Equals(lenghtLong));
+        }
+
+        [Fact]
+        public void verify_two_lengh_2_001_mm_and_2001_m()
+        {
+            var lenghtShort = new Length(2.001, LenghtUnit.m);
+            var lenghtLong = new Length(2001, LenghtUnit.mm);
+
+            Assert.True(lenghtShort.Equals(lenghtLong));
+        }
+
+        [Fact]
+        public void verify_two_lengh_0_mm_and_0_m()
+        {
+            var lenghtShort = new Length(2.001, LenghtUnit.m);
+            var lenghtLong = new Length(2001, LenghtUnit.mm);
+
+            Assert.True(lenghtShort.Equals(lenghtLong));
+        }
     }
 }

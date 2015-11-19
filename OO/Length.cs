@@ -1,62 +1,44 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace OO
 {
     public class Length
     {
-        private double len;
-        private LengthUnit lenUnit = LengthUnit.m;
-        public Length(double length) 
+        readonly double len;
+        private double p;
+        private LenghtUnit lenghtUnit;
+
+        public Length(double len):this(len, LenghtUnit.m)
         {
-            this.len = length;
         }
 
-        public Length(double length, LengthUnit lengthUnit)
+        public Length(double len, LenghtUnit lenghtUnit)
         {
-            this.len = length;
-            this.lenUnit = lengthUnit;
+            this.len = len;
+            this.lenghtUnit = lenghtUnit;
         }
 
-        public double GetLength() 
+        public double Len 
         {
-            return this.len; 
+            get { return this.len; }
         }
 
-        public LengthUnit GetUnit()
+        public override bool Equals(object obj)
         {
-            return this.lenUnit;
+            Length length = (Length) obj;
+            return Math.Abs(GetUnify() - length.GetUnify()) < 0.0001;
         }
 
-        public bool Equal(Length length)
+        private double GetUnify()
         {
-            if (EqualForDouble(len,length.UnifyLengthUnit(lenUnit)))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return len * (double) lenghtUnit;
         }
+    }
 
-        private bool EqualForDouble(double data1, double data2)
-        {
-            return Math.Abs(data1 - data2) < 0.0000001;
-        }
-
-        public double UnifyLengthUnit(LengthUnit lengthUnit)
-        {
-            if (lenUnit == lengthUnit)
-            {
-                return this.len;
-            }
-            else
-            {
-                return this.len *  LengthUnitExchange.CalculateMutiples(lenUnit, lengthUnit);
-            }
-        }
+    public enum LenghtUnit
+    {
+        cm = 10,
+        m = 1000,
+        mm = 1
     }
 }
